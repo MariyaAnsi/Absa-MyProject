@@ -1,0 +1,20 @@
+{
+  "title": "WE SET OUT TO UNDERSTAND PEOPLE BETTER",
+  "text": "The internet is the largest reflection of Human Behaviour.",
+  "text1":"We, understand that each of these digital fragments is meaningless without human context.",
+  "text2":"Anthropologists, semioticians and designers work together with engineers, data scientists and mathematicians.",
+  "text3":"With so many different pairs of eyes, we research the internet as a dynamic reflection of the world. It allows us to understand people and culture at a scale never before possible.",
+
+  "section": [
+    {
+      "title": "Why Antd?",
+      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Why styled-components?",
+      "content": "Styled Components gives you total control over your components.",
+      "icon": "notes.svg"
+    }
+  ]    
+}
