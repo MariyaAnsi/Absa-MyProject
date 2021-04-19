@@ -7,7 +7,10 @@ import Hero from './Hero';
 
 
 
+
+
 const Login=()=>{
+
     const [user,setUser]=useState('');
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
@@ -26,6 +29,10 @@ const Login=()=>{
         setPasswordError('');
 
     };
+  
+    
+    
+  
     
     
     const handleLogin=()=>{
@@ -99,15 +106,21 @@ useEffect(()=>{
 
     return(
 
+      
 
         <div className="Login">
             {user ? (
-                 <Hero handleLogout={handleLogout} />
+              
+               
+                  <Hero handleLogout={handleLogout}/>
+        
+               
                
                  
 
             ):(
 
+             
             <Loginhtml
             email={email} 
             setEmail={setEmail} 
@@ -120,10 +133,15 @@ useEffect(()=>{
             emailError={emailError}
             passwordError={passwordError}
             />
+            
             )}
         </div>
+     
+
 
     );
+   
+   
 }
 
 export default Login;
