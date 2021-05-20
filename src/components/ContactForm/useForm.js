@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { notification } from "antd";
 // import axios from "axios";
-import {db} from "../../pages/Fire";
+import {db} from "/home/mariya/vscodeproj/absa/src/pages/Fire.jsx"
 
 const useForm = (validate) => {
   const [values, setValues] = useState({});

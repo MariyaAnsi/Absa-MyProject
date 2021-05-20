@@ -44,7 +44,7 @@ const Header = ({ t }) => {
         </S.CustomNavLinkSmall>
         
         <S.CustomNavLinkSmall>
-         <S.Span><Link to="/Login" style={{color:'#000000'}}>{t("Create Account")}</Link></S.Span>
+         <S.Span><Link to="/signup" style={{color:'#000000'}}>{t("Create Account")}</Link></S.Span>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall
           style={{ width: "180px" }}

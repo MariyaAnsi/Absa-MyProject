@@ -1,8 +1,10 @@
 import { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import { AuthProvider } from "../pages/Auth";
 
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+//import Footer from "../components/Footer";
+//import Dashboard from '../pages/Dashboard.jsx';
 
 
 
@@ -11,6 +13,7 @@ import GlobalStyles from "../globalStyles";
 
 const Router = () => {
   return (
+    <AuthProvider>
     <Suspense fallback={null}>
       <GlobalStyles />
       <Header />
@@ -25,9 +28,11 @@ const Router = () => {
             />
           );
         })}
+        
       </Switch>
-      <Footer />
+  
     </Suspense>
+    </AuthProvider>
   );
 };
 
