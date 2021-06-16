@@ -1,129 +1,47 @@
-import React, {useState,useEffect} from 'react';
-import './Login.css'
-import Fire from './Fire';
-import Loginhtml from './Loginhtml';
-import Hero from './Hero';
+import React, { useContext } from "react";
+import { Redirect } from "react-router-dom";
+import { AuthContext } from "../pages/Auth.js";
+import firebaseConfig  from "../pages/Fire.jsx";
+import './Login.css';
 
-
-
-
-const Login=()=>{
-    const [user,setUser]=useState('');
-    const [email,setEmail]=useState('');
-    const [password,setPassword]=useState('');
-    const [emailError,setEmailError]=useState('');
-    const [passwordError,setPasswordError]=useState('');
-    const [hasAccount,setHasAccount]=useState(false);
-
-    const clearInputs=()=>{
-        setEmail('');
-        setPassword('');
-
-    };
-
-    const clearErrors=()=>{
-        setEmailError('');
-        setPasswordError('');
-
-    };
+const Login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = e.target.elements;
+    try {
+      firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
+    } catch (error) {
+      alert(error);
+    }
+  };
+  
+  const { currentUser } = useContext(AuthContext);
+  if (currentUser) {
+    return <Redirect to="/dashboard" />;
+  }
+  return (
     
-    
-    const handleLogin=()=>{
-
-        clearErrors();
-
-        Fire
-        .auth()
-        .signInWithEmailAndPassword(email,password)
-        .catch((err)=>{
-            switch(err.code){
-                case "auth/Invalid-email":
-                case "auth/user-disabled":
-                case "auth/user-not-found":
-                    setEmailError(err.message);
-                    break;
-                case "auth/wrong-password":
-                    setPasswordError(err.message);
-                    break;
-                default:
-            }
-        });
-
-        
-
-    };
-
-const handleSignup=()=>{
-    clearErrors();
-
-    Fire
-        .auth()
-        .createUserWithEmailAndPassword(email,password)
-        .catch((err)=>{
-            switch(err.code){
-                case "auth/email-already-in-use":
-                case "auth/invalid-email":
-               
-                    setEmailError(err.message);
-                    break;
-                case "auth/weak-password":
-                    setPasswordError(err.message);
-                    break;
-                default:
-
-            }
-        });
-};
-
-const handleLogout =()=>{
-    Fire.auth().signOut();
-};
-
-const authListener =()=>{
-    Fire.auth().onAuthStateChanged((user)=>{
-        if(user){
-            clearInputs();
-            setUser(user);
+    <section className="login"> 
+        <div className="loginContainer">
             
+            <form onSubmit={handleSubmit}>
+            <label>Login</label>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email" />
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" />
+            
+            <div className="btnContainer">
+            <button type="submit">Submit</button>
+            
+            </div>
+      </form>
 
-        }else {
-            setUser("");
-        }
-
-    });
+    
+       </div>
+    </section>
+  )
 };
-
-useEffect(()=>{
-    authListener(); // eslint-disable-next-line
-},[]);
-
-    return(
-
-
-        <div className="Login">
-            {user ? (
-                 <Hero handleLogout={handleLogout} />
-               
-                 
-
-            ):(
-
-            <Loginhtml
-            email={email} 
-            setEmail={setEmail} 
-            password={password}
-            setPassword={setPassword}
-            handleLogin={handleLogin}
-            handleSignup={handleSignup}
-            hasAccount={hasAccount}
-            setHasAccount={setHasAccount}
-            emailError={emailError}
-            passwordError={passwordError}
-            />
-            )}
-        </div>
-
-    );
-}
 
 export default Login;
