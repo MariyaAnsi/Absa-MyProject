@@ -1,0 +1,42 @@
+[
+  {
+    "Aspect": "BATTERY",
+    "POSITIVE":759,
+    "NEGATIVE":338
+    
+  },
+  
+  {
+    "Aspect": "CAMERA",
+    "POSITIVE":991,
+    "NEGATIVE":670
+  },
+  
+  {
+    "Aspect": "DISPLAY",
+    "POSITIVE":534,
+    "NEGATIVE":622
+    
+  },
+ 
+  {
+    "Aspect": "PERFORMANCE",
+    "POSITIVE":493,
+    "NEGATIVE":645
+  },
+  
+  {
+    "Aspect": "PRICE",
+    "POSITIVE":348,
+    "NEGATIVE":936
+  },
+ 
+  {
+    "Aspect": "SENSOR",
+    "POSITIVE":347,
+    "NEGATIVE":664
+    
+    
+  }
+ 
+]

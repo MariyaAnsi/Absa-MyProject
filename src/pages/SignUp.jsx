@@ -1,9 +1,11 @@
 import React, {useState} from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect} from "react-router-dom";
 import firebaseConfig  from "../pages/Fire.jsx";
 import './SignUp.css';
 
 import validator from 'validator';
+
+
 
 const SignUp = () => {
   const [currentUser, setCurrentUser] = useState(null);  
@@ -63,6 +65,7 @@ const SignUp = () => {
             <span style={{fontWeight: 'bold',color: 'red',}}>{passwordError}</span>
             <div className="btnContainer">
             <button type="submit">Submit</button>
+            
             
             </div>
             </form>

@@ -1,5 +1,5 @@
 import React ,{useState,useEffect} from 'react';
-import  './Analytics.css';
+import  './Chartsui.css';
 import * as d3 from "d3";
 import { PieChart, Pie, Cell } from "recharts";
 
@@ -15,15 +15,13 @@ import {
 
 
 const data = [
-    { name: "Positive Reviews", value: 4286 },
+    { name: "Postive Reviews", value: 4286 },
     { name: "Negative Reviews", value: 2718 }
   ];
-
-const data01 = [
-    { name: "Positive Reviews", value: 4617 },
+  const data01 = [
+    { name: "Postive Reviews", value: 4617 },
     { name: "Negative Reviews", value: 2730 }
   ];
-
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
   const COLORS1=["#00C49F", "#FFBB28"]
 
@@ -59,13 +57,7 @@ const data01 = [
 <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" rel="stylesheet" type="text/css"/>
 
 
-const Analytics=(props)=>{
-
-
-
-  const selectdata=props.location.aboutProps
-
-  console.log("analytics",selectdata)
+const Chartsui=()=>{
 
 
     const [Data, setdata] = useState("");
@@ -86,21 +78,19 @@ const Analytics=(props)=>{
         });
         return () => undefined;
       }, []);
-
-      
+    
     
 return(
-    <div className="Analytics"> 
+    <div className="Chartsui"> 
         <div class="container">
             <main>
                 <div class="dashboard-container">
                     <div class="card-1">
-                        <h4 class="chart-lbl">Samsung-Overall Polarity</h4>
+                        <h4 class="chart-lbl">Doughnut Chart</h4>
                         <div class="divider"></div>
                         <div class="content-center">
-                            <div class="pie-chart-container">
-                            <PieChart width={420} height={300}>
-                          
+                            <div class="doughnut-chart-container">
+                            <PieChart width={500} height={300}>
                              <Pie
     
                             data={data01}
@@ -116,25 +106,19 @@ return(
                             <Cell key={`cell-${index}`} fill={COLORS1[index % COLORS1.length]} />
                             ))}
                             </Pie>
-                            <Legend class='legend' height={250}>
-                           </Legend>
-
-                       
-                       
-                          
+      
                             </PieChart>
-                           
                                 
                                 
                             </div>
                         </div>
                     </div>
                     <div class="card-2">
-                        <h4 class="chart-lbl">Xoami-Overall Polarity</h4>
+                        <h4 class="chart-lbl">PIE Chart</h4>
                         <div class="divider"></div>
                         <div class="content-center">
                             <div class="pie-chart-container">
-                            <PieChart width={420} height={300}>
+                            <PieChart width={400} height={300}>
                              <Pie
     
                             data={data}
@@ -145,15 +129,12 @@ return(
                             outerRadius={80}
                             fill="#8884d8"
                             dataKey="value"
-                            
                             >
                             {data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                             </Pie>
-                            <Legend class='legend' height={250}>
-                           </Legend>
-                          
+      
                             </PieChart>
                             
                                
@@ -161,7 +142,7 @@ return(
                         </div>
                     </div>
                     <div class="card-3">
-                        <h4 class="chart-lbl">Samsung-Aspect Comparison</h4>
+                        <h4 class="chart-lbl">Product 1</h4>
                         <div class="divider"></div>
                         <div class="bar-chart-container">
                         <BarChart
@@ -188,7 +169,7 @@ return(
                         </div>
                     </div>
                     <div class="card-4">
-                        <h4 class="chart-lbl">Xoami-Aspect Comparison</h4>
+                        <h4 class="chart-lbl">Product 2</h4>
                         <div class="divider"></div>
                         <div class="bar-chart-container">
                         <BarChart
@@ -227,4 +208,5 @@ return(
     );
 }
 
-export default Analytics;
+export default Chartsui;
+

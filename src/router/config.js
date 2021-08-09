@@ -26,6 +26,11 @@ const routes = [
     component:'Predictindex'
 
   },
+  {
+    path:['/chartsui'],
+    component:'Chartsui'
+
+  },
 
 
 ];

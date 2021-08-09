@@ -10,7 +10,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
+
+
 const Dashboard = () => {
+ 
 
   var Options=[
     {
@@ -21,16 +24,17 @@ const Dashboard = () => {
       value:2,
       label:"Xoami"
     },
-    {
-      value:3,
-      label:"Nokia"
-    },
+   
+    
   ];
 
 
 
  const[selected,setSelected]=useState([]);
- var selectedstring=JSON.stringify(selected)
+
+
+
+
   
   const { currentUser } = useContext(AuthContext);
   if (!currentUser) {
@@ -38,7 +42,7 @@ const Dashboard = () => {
   }else{
   return (
     <div class='Dashboard'>
-      
+    
       <div className="d-flex justify-content-center" style={{  gap: '12px',  position: 'fixed',
         top: '50%',
         left: '50%',
@@ -53,18 +57,22 @@ const Dashboard = () => {
             onChange={setSelected}
             labelledBy="Select Brand"
             />
-               <pre>{selectedstring}</pre>
+           
+            
+            
+
                        
+
            </div>
           
 
-          <Link to='/analytics'><Button variant="primary" style={{width:'10rem'}}>View Analytics</Button></Link>
+          <Link to={{pathname:'/analytics', aboutProps:{name:selected}}}><Button  variant="primary" style={{width:'10rem'}}>View Analytics</Button></Link>
          </Card.Body>
       </Card>
       <Card className ="card2" style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>Online Prediction</Card.Title>
-         <Link to='/predictindex'><Button variant="primary" style={{width:'10rem'}}>Predict</Button></Link>
+          <Card.Title>Model Prediction</Card.Title>
+         <Link to='/predictindex'><Button variant="primary" style={{width:'10rem'}}>Start</Button></Link>
        </Card.Body>
       </Card>
       <Card className ="card3" style={{ width: '18rem' }}>
