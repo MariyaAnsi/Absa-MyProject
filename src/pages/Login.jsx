@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect,Link } from "react-router-dom";
 import { AuthContext } from "../pages/Auth.js";
-import firebaseConfig  from "../pages/Fire.jsx";
+import firebaseConfig  from "../common/Fire.jsx";
+
 import './Login.css';
 
 const Login = () => {
@@ -26,14 +27,27 @@ const Login = () => {
             
             <form onSubmit={handleSubmit}>
             <label>Login</label>
-            <label for="email">Email</label>
+            <label>Email</label>
             <input type="email" name="email" placeholder="Email" />
             
-            <label for="password">Password</label>
+            <label>Password</label>
             <input type="password" name="password" placeholder="Password" />
             
             <div className="btnContainer">
             <button type="submit">Submit</button>
+            </div>
+            <div>
+              
+            <p className="signuplink">
+              Don't have an account?{" "}
+            <Link to="/signup" className='link'>
+              Sign up here 
+            </Link>
+           
+            </p>
+            
+            
+           
             
             </div>
       </form>

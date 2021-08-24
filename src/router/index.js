@@ -10,6 +10,7 @@ import Header from "../components/Header";
 
 import routes from "./config";
 import GlobalStyles from "../globalStyles";
+//import { Footer } from "antd/lib/layout/layout";
 
 const Router = () => {
   return (
@@ -28,9 +29,9 @@ const Router = () => {
             />
           );
         })}
-        
+     
       </Switch>
-  
+     
     </Suspense>
     </AuthProvider>
   );

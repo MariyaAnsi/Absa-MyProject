@@ -17,7 +17,7 @@
     cursor: pointer;
   }
   
-  .login {
+  .signup {
     width: 100%;
     min-height: 100vh;
     padding: 0 20px;
@@ -25,7 +25,7 @@
     display: flex;
   }
   
-  .login .loginContainer {
+  .signup .signupContainer {
     padding: 60px;
     margin: auto;
     width: 100%;
@@ -43,7 +43,7 @@
     box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
   }
   
-  .login .loginContainer label {
+  .signup .signupContainer label {
     color: white;
     margin: 14px 0;
     display: block;
@@ -51,7 +51,7 @@
     line-height: 1;
   }
   
-  .login .loginContainer input {
+  .signup .signupContainer input {
     width: 100%;
     border: none;
     outline: none;
@@ -62,18 +62,18 @@
     letter-spacing: 1px;
   }
   
-  .login .loginContainer .btnContainer {
+  .signup .signupContainer .btnContainer {
     width: 100%;
     padding: 24px 0;
   }
   
-  .login .loginContainer .btnContainer p {
+  .signup .signupContainer .btnContainer p {
     margin: 14px 0 0 0;
     text-align: right;
     color: #fff;
   }
   
-  .login .loginContainer .btnContainer p span {
+  .signup .signupContainer .btnContainer p span {
     color: yellow;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -83,6 +83,21 @@
     transition: all 400ms ease-in-out;
   }
   
-  .login .loginContainer .btnContainer p span:hover {
+  .signup .signupContainer .btnContainer p span:hover {
     color: red;
   }
+
+  .signup .signupContainer .loginlink{
+    text-align: right;
+    color:#fff;
+  }
+  .signup .signupContainer .link{
+    color:#FF9633;
+  }
+  .signup .signupContainer .signuplabel{
+    text-align: center;
+    font-weight: 1000;
+    font-size: 25%;
+  }
+
+  

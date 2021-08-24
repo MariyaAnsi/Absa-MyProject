@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import { Redirect} from "react-router-dom";
-import firebaseConfig  from "../pages/Fire.jsx";
+import { Redirect,Link} from "react-router-dom";
+import firebaseConfig  from "../common/Fire.jsx";
 import './SignUp.css';
 
 import validator from 'validator';
@@ -48,31 +48,37 @@ const SignUp = () => {
   
 
   if (currentUser) {
-      return <Redirect to="/login" />;
+      return <Redirect to="/login" />
   }
   return (
     
-    <section className="login"> 
-        <div className="loginContainer">
-            <label>Sign Up</label>
+    <section className="signup"> 
+        <div className="signupContainer">
+            <div className='signuplabel'>
+            <label>Sign In</label>
+            </div>
+
       
             <form onSubmit={handleSubmit}>
-            <label for="email">Email</label>
+            <label>Email</label>
             <input type="email" name="email" placeholder="Email" onChange={(e) => validateEmail(e)}/>
             <span style={{fontWeight: 'bold',color: 'red',}}>{emailError}</span>
-            <label for="password">Password</label>
+            <label>Password</label>
             <input type="password" name="password" placeholder="Password" onChange={(e) => validatePassword(e)}/>
             <span style={{fontWeight: 'bold',color: 'red',}}>{passwordError}</span>
             <div className="btnContainer">
             <button type="submit">Submit</button>
-            
-            
+            <div className="loginlink">
+            <p>Have an account?{" "}
+            <Link to="/login" className="link">Login</Link>
+            </p>
+            </div>
             </div>
             </form>
     
          </div>
     </section>
-  );
-};
+  )
+ };
 
 export default SignUp;

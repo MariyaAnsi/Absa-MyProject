@@ -1,12 +1,12 @@
 import React, { useContext ,useState} from "react";
 import { Redirect,Link } from "react-router-dom";
 import { AuthContext } from "./Auth";
-import firebaseConfig from "../pages/Fire";
+import firebaseConfig from "/home/mariya/vscodeproj/absa/src/common/Fire.jsx";
 import MultiSelect from "react-multi-select-component";
 //import Select from 'react-select';
 import { Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import './Dashboard.css';
+import './Dashboard.css';
 
 
 
@@ -41,7 +41,8 @@ const Dashboard = () => {
     return <Redirect to="/login" />;
   }else{
   return (
-    <div class='Dashboard'>
+    <div className="Dashboard">
+      <div className="DashboardContainer">
     
       <div className="d-flex justify-content-center" style={{  gap: '12px',  position: 'fixed',
         top: '50%',
@@ -82,6 +83,7 @@ const Dashboard = () => {
       </Card>
       
      
+      </div>
       </div>
  
     </div>

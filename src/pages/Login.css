@@ -85,3 +85,11 @@
   .login .loginContainer .btnContainer p span:hover {
     color: red;
   }
+  .login .loginContainer .signuplink{
+    text-align: right;
+    color:#fff;
+  }
+  .login .loginContainer .link{
+    
+    color:#FF9633;
+  }
