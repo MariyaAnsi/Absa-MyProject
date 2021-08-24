@@ -1,6 +1,6 @@
 FROM node:14.17.3-buster
 
-WORKDIR /home/mariya/vscodeproj/absa
+WORKDIR /code
 
 COPY package.json /code/package.json
 COPY package-lock.json package-lock.json
